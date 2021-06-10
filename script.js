@@ -46,11 +46,12 @@ while (utentNums.length <= 84) {
     } else {
         alert("Non puoi inserire lo stesso numero")
     }
-}
-if (randomNumbersPc.includes(askNums) === true) {
-    alert("GIOCO FINITO, HAI PRESO LA BOMBA") 
+    if (randomNumbersPc.includes(askNums) === true) {
+        alert("GIOCO FINITO, HAI PRESO LA BOMBA") 
+        break
+    }
+} console.log(utentNums)
 
-}
     
 
 
