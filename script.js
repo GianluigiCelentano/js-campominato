@@ -39,9 +39,14 @@ function randomNum () {
 var randomNumbersPc = randomNum()
 
 var utentNums = []
-while (utentNums.length <= 84) {
-    var askNums = parseInt(prompt("Inserisci il tuo numero"))
-    if (utentNums.includes(askNums) === false) {
+while (utentNums.length < 84) {
+
+    var askNums = parseInt(prompt("Inserisci un numero da 1 a 100"))
+    
+    if (askNums > 100 || askNums < 1) {
+        alert("Inserisci un numero da 1 a 100")
+        utentNums.includes(askNums) === true
+    } else if (utentNums.includes(askNums) === false) {
         utentNums.push(askNums)
     } else {
         alert("Non puoi inserire lo stesso numero")
@@ -49,8 +54,11 @@ while (utentNums.length <= 84) {
     if (randomNumbersPc.includes(askNums) === true) {
         alert("GIOCO FINITO, HAI PRESO LA BOMBA") 
         break
+    } else if (utentNums.length === 84 && utentNums.length !== randomNumbersPc) {
+        alert ("HAI VINTO!!")
+        console.log(utentNums)
     }
-} console.log(utentNums)
+}
 
     
 
