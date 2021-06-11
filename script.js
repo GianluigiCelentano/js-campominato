@@ -27,38 +27,40 @@
 function randomNum () {
     var pcListNum = [];
         while (pcListNum.length < 16){
-        var i = Math.floor(Math.random() * 100)
+        var i = Math.floor(Math.random() * 100 + 1)
         if (pcListNum.includes(i) === false) {
             pcListNum.push(i)
         }
     }
     return pcListNum
     }
-    console.log(randomNum())
+
 
 var randomNumbersPc = randomNum()
+
+console.log(randomNumbersPc)
+
 
 var utentNums = []
 while (utentNums.length < 84) {
 
     var askNums = parseInt(prompt("Inserisci un numero da 1 a 100"))
-    
+
     if (askNums > 100 || askNums < 1) {
         alert("Inserisci un numero da 1 a 100")
-        utentNums.includes(askNums) === true
-    } else if (utentNums.includes(askNums) === false) {
+
+    } else if (!utentNums.includes(askNums)) {
         utentNums.push(askNums)
     } else {
         alert("Non puoi inserire lo stesso numero")
     }
-    if (randomNumbersPc.includes(askNums) === true) {
+    if (randomNumbersPc.includes(askNums)) {
         alert("GIOCO FINITO, HAI PRESO LA BOMBA") 
         break
     } else if (utentNums.length === 84 && utentNums.length !== randomNumbersPc) {
         alert ("HAI VINTO!!")
-        console.log(utentNums)
     }
-}
+} console.log(utentNums)
 
     
 
